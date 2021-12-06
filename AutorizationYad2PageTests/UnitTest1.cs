@@ -1,20 +1,22 @@
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using System.Threading;
 
 namespace AutorizationYad2PageTests
 {
     public class Tests
     {
-        private const string _login = "********";
-        private const string _password = "********";
+        private const string _login = "*******";
+        private const string _password = "*******";
+        private const string _expectedLogIn = "GB";
 
         private IWebDriver driver;
-        private readonly By _signInButton = By.XPath("//a[@title='ΰζεψ ΰιωι']");
+        private readonly By _signInButton = By.XPath("//a[@title='ΧΧ–Χ•Χ¨ ΧΧ™Χ©Χ™']");
         private readonly By _loginInputButton = By.XPath("//input[@class='direction-ltr']");
         private readonly By _passwordInputButton = By.XPath("//input[@type='password']");
         private readonly By _enetrButton = By.XPath("//button[@type='submit']");
-
+        private readonly By _loginName = By.XPath("//span[@class='name_initials']");
 
 
         [SetUp]
@@ -39,6 +41,10 @@ namespace AutorizationYad2PageTests
 
             var enter = driver.FindElement(_enetrButton);
             enter.Click();
+
+            Thread.Sleep(1000);
+            var _actualLogIn = driver.FindElement(_loginName).Text;
+            Assert.AreEqual(_expectedLogIn, _actualLogIn, "LogIn is wrong or Enter wasn't completed!");
         }
 
         [TearDown]
