@@ -7,8 +7,8 @@ namespace AutorizationYad2PageTests
 {
     public class Tests
     {
-        private const string _login = "*******";
-        private const string _password = "*******";
+        private const string _login = "geobro@mail.ru";
+        private const string _password = "geo86ger21";
         private const string _expectedLogIn = "GB";
 
         private IWebDriver driver;
@@ -16,8 +16,7 @@ namespace AutorizationYad2PageTests
         private readonly By _loginInputButton = By.XPath("//input[@class='direction-ltr']");
         private readonly By _passwordInputButton = By.XPath("//input[@type='password']");
         private readonly By _enetrButton = By.XPath("//button[@type='submit']");
-        private readonly By _loginName = By.XPath("//span[@class='name_initials']");
-
+        private readonly By _loginName = By.XPath("//li[@class='no_sub_menu private_zone desktop_only']");
 
         [SetUp]
         public void Setup()
@@ -42,9 +41,9 @@ namespace AutorizationYad2PageTests
             var enter = driver.FindElement(_enetrButton);
             enter.Click();
 
-            Thread.Sleep(1000);
+            Thread.Sleep(5000);
             var _actualLogIn = driver.FindElement(_loginName).Text;
-            Assert.AreEqual(_expectedLogIn, _actualLogIn, "LogIn is wrong or Enter wasn't completed!");
+            Assert.AreEqual(_expectedLogIn,_actualLogIn,"LogIn_is_Wrong_Or_Enter_Wasn't_Completed!");
         }
 
         [TearDown]
