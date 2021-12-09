@@ -7,8 +7,8 @@ namespace AutorizationYad2PageTests
 {
     public class Tests
     {
-        private const string _login = "geobro@mail.ru";
-        private const string _password = "geo86ger21";
+        private const string _login = "***********";
+        private const string _password = "*******";
         private const string _expectedLogIn = "GB";
 
         private IWebDriver driver;
