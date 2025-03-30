@@ -1,3 +1,3 @@
-# AutorizationYad2PageTests.
-# C# Selenium Automation LogIn WebSite Tests.
-# Enter to the site and log In with Email and Password.
+# AutorizationYad2PageTests
+# C# Selenium Automation LogIn WebSite tests
+# Enter the site and log in with your email and password
